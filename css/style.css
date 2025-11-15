@@ -1,0 +1,624 @@
+/* ==========================================
+   基礎設定與重置
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "王漢宗特黑體", "HanWangHeiHeavy", "Microsoft JhengHei", "微軟正黑體", Arial, sans-serif;
+    line-height: 1.6;
+    color: #000;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   Header裝飾條 (亮黃色)
+   ========================================== */
+.header-decoration {
+    background-color: #ffe16a;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+.header-decoration .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header-logo {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+/* ==========================================
+   導航欄
+   ========================================== */
+.navbar {
+    background-color: #fffde7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+/* 導航選單 */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    padding: 10px 20px;
+    display: block;
+    background-color: #fff8cc;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #000;
+    background-color: #ffe16a;
+}
+
+/* 下拉選單 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fffde7;
+    min-width: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    list-style: none;
+    border-radius: 4px;
+    overflow: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ffe16a;
+    color: #000;
+}
+
+/* 二級下拉選單 */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > a::after {
+    content: ' ▸';
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.dropdown-submenu-list {
+    display: none !important;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #fffde7;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    list-style: none;
+    border-radius: 4px;
+    overflow: visible;
+    z-index: 1001;
+    margin-left: 2px;
+}
+
+.dropdown-submenu:hover > .dropdown-submenu-list {
+    display: block !important;
+}
+
+.dropdown-submenu-list li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-submenu-list li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-submenu-list a {
+    display: block;
+    padding: 12px 20px;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-submenu-list a:hover {
+    background-color: #ffe16a;
+    color: #000;
+}
+
+/* 三層選單支持 */
+.dropdown-submenu-list .dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu-list .dropdown-submenu-list {
+    z-index: 1002;
+    margin-left: 2px;
+}
+
+.dropdown-submenu-list .dropdown-submenu:hover > .dropdown-submenu-list {
+    display: block !important;
+}
+
+/* 手機版選單按鈕 */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ==========================================
+   主要內容區塊
+   ========================================== */
+main {
+    min-height: calc(100vh - 200px);
+}
+
+.content-section {
+    margin: 0 0 40px 0;
+    background-color: #fff8cc;
+    padding-bottom: 40px;
+}
+
+/* 圖片區塊 */
+.image-section {
+    width: 100%;
+    height: 585px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 0 30px 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Section Title Bar (淺黃色) */
+.section-title {
+    background-color: #fffde7;
+    padding: 15px 0;
+    margin-bottom: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    scroll-margin-top: 75px;
+}
+
+/* 為沒有圖片區塊的頁面，第一個標題欄添加上方留白 */
+.content-section:first-child .section-title:first-child {
+    margin-top: 60px;
+}
+
+.section-title h2 {
+    text-align: center;
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.section-title {
+    text-align: center;
+}
+
+/* 內容區域 */
+.section-content {
+    padding: 30px 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    min-height: 400px;
+}
+
+.section-content p {
+    margin-bottom: 15px;
+}
+
+/* 圖片排列 */
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.image-item {
+    flex: 1;
+}
+
+.image-item a {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-item a:hover {
+    transform: scale(1.05);
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.image-item a:hover img {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image-caption {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* ==========================================
+   YouTube影片響應式容器
+   ========================================== */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 比例 */
+    height: 0;
+    overflow: hidden;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* ==========================================
+   Footer裝飾
+   ========================================== */
+.footer-decoration {
+    background-color: #ffe16a;
+    color: #000;
+    padding: 30px 0;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.footer-decoration .container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-logo {
+    height: 100px;
+    width: auto;
+    display: block;
+    grid-column: 2;
+}
+
+.footer-text-left {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    grid-column: 1;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.footer-text-right {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    grid-column: 3;
+    text-align: center;
+}
+
+.footer-decoration p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   森林小學劇場 - 教具項目排列
+   ========================================== */
+.tool-items-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 40px 0;
+}
+
+.tool-button {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #fff8cc;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "王漢宗特黑體", "HanWangHeiHeavy", "Microsoft JhengHei", "微軟正黑體", Arial, sans-serif;
+}
+
+.tool-button:hover {
+    background-color: #ffe16a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.tool-button.active {
+    background-color: #ffe16a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 內容切換容器 */
+.tool-content-container {
+    margin-top: 30px;
+    min-height: 300px;
+}
+
+.tool-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.tool-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tool-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.tool-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   響應式設計 - 平板 (768px以下)
+   ========================================== */
+@media (max-width: 768px) {
+    /* 導航欄調整 */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-brand {
+        margin-bottom: 0;
+        padding: 10px 0;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fffde7;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-link {
+        padding: 15px 20px;
+    }
+
+    /* 下拉選單調整為展開式 */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background-color: #f9f9f9;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    /* Section title 字體調整 */
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+
+    /* 內容文字調整 */
+    .section-content {
+        font-size: 1rem;
+    }
+
+    /* Container padding調整 */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* 教具項目響應式 */
+    .tool-items-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .tool-button {
+        font-size: 1.1rem;
+        padding: 10px 30px;
+    }
+}
+
+/* ==========================================
+   響應式設計 - 手機 (480px以下)
+   ========================================== */
+@media (max-width: 480px) {
+    .header-decoration {
+        height: 40px;
+    }
+
+    .nav-brand {
+        font-size: 1.2rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.3rem;
+    }
+
+    .section-content {
+        font-size: 0.95rem;
+    }
+
+    .footer-decoration {
+        padding: 20px 0;
+    }
+}
+
+/* ==========================================
+   平滑滾動
+   ========================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   通用輔助類別
+   ========================================== */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}

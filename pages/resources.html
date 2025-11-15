@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電子資源</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header裝飾條 (土黃色) -->
+    <div class="header-decoration">
+        <div class="container">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Logo" class="header-logo">
+            </a>
+        </div>
+    </div>
+
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- 手機版選單按鈕 -->
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- 導航選單 -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="intro.html" class="nav-link">介紹</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="intro.html#design">設計理念</a></li>
+                        <li><a href="intro.html#users">使用對象</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="materials.html" class="nav-link">教材教具</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="materials.html#books">系列繪本</a>
+                            <ul class="dropdown-submenu-list">
+                                <li><a href="book1.html#book-title">我是身體小主人</a></li>
+                                <li><a href="book2.html#book-title">我要上學趣</a></li>
+                                <li><a href="book3.html#book-title">我會交朋友</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="materials.html#tools">搭配教具</a>
+                            <ul class="dropdown-submenu-list">
+                                <li><a href="tool1.html#tool-title">指導手冊</a></li>
+                                <li><a href="tool2.html#tool-title">樂學板</a></li>
+                                <li class="dropdown-submenu">
+                                    <a href="tool3.html#tool-title">森林小學劇場</a>
+                                    <ul class="dropdown-submenu-list">
+                                        <li><a href="tool3.html#cards">情境卡牌</a></li>
+                                        <li><a href="tool3.html#puppets">角色手偶</a></li>
+                                        <li><a href="tool3.html#stage">舞台</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a href="resources.html" class="nav-link">電子資源</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="resources.html#ebook1">我是身體小主人</a></li>
+                        <li><a href="resources.html#ebook2">我要上學趣</a></li>
+                        <li><a href="resources.html#ebook3">我會交朋友</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="about.html" class="nav-link">關於我們</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#team">團隊介紹</a></li>
+                        <li><a href="about.html#contact">聯絡我們</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main>
+        <section class="content-section">
+            <div class="section-title" id="resources-title">
+                <h2>電子資源</h2>
+            </div>
+            <div class="container">
+                <div class="section-content">
+                    <!-- 說明文字 -->
+                    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">我們不只設計了實體的繪本教具，也幫師長們準備了數位學習平台，有電子書和線上網站可供大家學習和使用。</p>
+
+                    <!-- 按鈕選單 -->
+                    <div class="tool-items-row">
+                        <button class="tool-button active" data-target="ebook1">我是身體小主人</button>
+                        <button class="tool-button" data-target="ebook2">我要上學趣</button>
+                        <button class="tool-button" data-target="ebook3">我會交朋友</button>
+                    </div>
+
+                    <!-- 內容區塊 -->
+                    <div class="tool-content-container">
+                        <!-- 我是身體小主人內容 -->
+                        <div class="tool-content active" id="ebook1">
+                            <h3>我是身體小主人</h3>
+                            <p>這裡可以放置「我是身體小主人」的電子資源內容。</p>
+                            <p>包括影片、互動資源等。</p>
+                        </div>
+
+                        <!-- 我要上學趣內容 -->
+                        <div class="tool-content" id="ebook2">
+                            <h3>我要上學趣</h3>
+                            <p>這裡可以放置「我要上學趣」的電子資源內容。</p>
+                            <p>包括影片、互動資源等。</p>
+                        </div>
+
+                        <!-- 我會交朋友內容 -->
+                        <div class="tool-content" id="ebook3">
+                            <h3>我會交朋友</h3>
+                            <p>這裡可以放置「我會交朋友」的電子資源內容。</p>
+                            <p>包括影片、互動資源等。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer裝飾條 -->
+    <footer class="footer-decoration">
+        <div class="container">
+            <p class="footer-text-left">中原大學特殊教育學系<br>第26屆畢業專題</p>
+            <img src="../images/logo.png" alt="Footer Logo" class="footer-logo">
+            <p class="footer-text-right">銜轉跳躍我閉著眼</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // 內容切換功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.tool-button');
+            const contents = document.querySelectorAll('.tool-content');
+
+            // 切換內容的函數
+            function switchContent(targetId, shouldScroll) {
+                // 移除所有按鈕的 active 狀態
+                buttons.forEach(function(btn) {
+                    btn.classList.remove('active');
+                });
+
+                // 移除所有內容的 active 狀態
+                contents.forEach(function(content) {
+                    content.classList.remove('active');
+                });
+
+                // 添加對應按鈕的 active 狀態
+                const targetButton = document.querySelector('.tool-button[data-target="' + targetId + '"]');
+                if (targetButton) {
+                    targetButton.classList.add('active');
+                }
+
+                // 顯示對應的內容
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+
+                // 滾動到標題位置，確保能看到完整內容
+                if (shouldScroll) {
+                    setTimeout(function() {
+                        const titleElement = document.getElementById('resources-title');
+                        if (titleElement) {
+                            titleElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 100);
+                }
+            }
+
+            // 監聽按鈕點擊
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    switchContent(targetId, false);
+                    // 更新 URL hash（但不滾動頁面）
+                    history.pushState(null, null, '#' + targetId);
+                });
+            });
+
+            // 檢查 URL 中是否有 hash，如果有則自動切換到對應內容
+            function checkHashAndSwitch() {
+                const hash = window.location.hash.substring(1); // 移除 # 符號
+                if (hash && (hash === 'ebook1' || hash === 'ebook2' || hash === 'ebook3')) {
+                    switchContent(hash, true);
+                }
+            }
+
+            // 頁面載入時檢查 hash
+            checkHashAndSwitch();
+
+            // 監聽 hash 變化（瀏覽器前進後退時）
+            window.addEventListener('hashchange', function() {
+                checkHashAndSwitch();
+            });
+        });
+    </script>
+</body>
+</html>

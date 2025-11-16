@@ -115,9 +115,10 @@
 
                         <!-- 角色手偶內容 -->
                         <div class="tool-content" id="puppets">
-                            <div style="text-align: center; margin: 0 0 30px 0;">
-                                <img src="../images/角色手偶.png" alt="角色手偶" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); clip-path: inset(24% 2% 24% 2%);">
+                            <div style="text-align: center; margin: 0; padding: 0;">
+                                <img src="../images/角色手偶.png" alt="角色手偶" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); clip-path: inset(0% 2% 0% 2%); display: block; margin: 0 auto;">
                             </div>
+                            <p>我們利用不織布製作角色手偶，搭配情境卡牌及森林小學劇場，家長和老師可帶領小朋友把情境搬上舞台，把角色帶入後，不僅能增進孩子的語言表達能力與創意思考。</p>
                         </div>
 
                         <!-- 舞台內容 -->
@@ -185,11 +186,23 @@
 
             // 監聽按鈕點擊
             buttons.forEach(function(button) {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault(); // 阻止默認行為
+                    // 如果點擊的是已經active的按鈕，不做任何操作
+                    if (this.classList.contains('active')) {
+                        return;
+                    }
                     const targetId = this.getAttribute('data-target');
                     switchContent(targetId, false);
                     // 更新 URL hash（但不滾動頁面）
                     history.pushState(null, null, '#' + targetId);
+                    // 滾動到標題位置
+                    setTimeout(function() {
+                        const titleElement = document.getElementById('tool-title');
+                        if (titleElement) {
+                            titleElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 100);
                 });
             });
 
@@ -207,6 +220,22 @@
             // 監聽 hash 變化（瀏覽器前進後退時）
             window.addEventListener('hashchange', function() {
                 checkHashAndSwitch();
+            });
+
+            // 監聽導航欄中的森林小學劇場子選單鏈接
+            const navLinks = document.querySelectorAll('a[href*="tool3.html#"]');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    const targetHash = href.split('#')[1];
+                    const currentHash = window.location.hash.substring(1);
+
+                    // 如果點擊的是當前已經顯示的內容，阻止默認行為
+                    if (targetHash === currentHash) {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
             });
         });
     </script>

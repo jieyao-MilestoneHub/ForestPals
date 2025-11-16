@@ -1,0 +1,35 @@
+GitHub Pages 部署说明
+====================
+
+已创建 gh-pages 分支并推送到 GitHub。
+
+接下来的步骤：
+--------------
+
+1. 访问您的 GitHub 仓库：
+   https://github.com/jieyao-MilestoneHub/daisy_project
+
+2. 点击仓库顶部的 "Settings"（设置）
+
+3. 在左侧菜单中找到 "Pages"
+
+4. 在 "Source" 下拉菜单中选择：
+   - Branch: gh-pages
+   - Folder: / (root)
+
+5. 点击 "Save"（保存）
+
+6. 等待几分钟后，您的网站将发布在：
+   https://jieyao-milestonehub.github.io/daisy_project/
+
+注意事项：
+---------
+- 网站完全可以正常运行，所有静态文件都会被托管
+- YouTube影片在GitHub Pages上可以正常播放
+- app.py等Python文件不会在GitHub Pages上运行（不需要）
+- 每次push到gh-pages分支，网站会自动更新
+- 首次部署可能需要等待5-10分钟
+
+测试：
+-----
+部署完成后，访问上述网址查看您的网站是否正常运行。

@@ -95,9 +95,20 @@ body {
     transition: all 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
     color: #000;
     background-color: #ffe16a;
+    outline: none;
+}
+
+/* 觸控設備的active狀態視覺反饋 */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link:active {
+        background-color: #ffd54f;
+        transform: scale(0.98);
+    }
 }
 
 /* 下拉選單 */
@@ -213,11 +224,15 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-toggle span {
@@ -499,6 +514,37 @@ main {
 }
 
 /* ==========================================
+   響應式設計 - 中型平板 (992px以下)
+   ========================================== */
+@media (max-width: 992px) {
+    /* 容器調整 */
+    .container {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+
+    /* 導航欄調整 */
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 10px 18px;
+    }
+
+    /* 圖片排列調整 */
+    .image-row {
+        gap: 25px;
+    }
+
+    /* 繪本頁面圖片縮小 */
+    .book-image-container {
+        flex: 0 0 350px;
+    }
+}
+
+/* ==========================================
    響應式設計 - 平板 (768px以下)
    ========================================== */
 @media (max-width: 768px) {
@@ -535,6 +581,18 @@ main {
 
     .nav-link {
         padding: 15px 20px;
+        border-radius: 0;
+    }
+
+    /* 下拉選單項目增加間距，便於觸控 */
+    .dropdown-menu a {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+
+    .dropdown-submenu-list a {
+        padding: 15px 20px;
+        font-size: 1rem;
     }
 
     /* 下拉選單調整為展開式 */
@@ -574,30 +632,120 @@ main {
         font-size: 1.1rem;
         padding: 10px 30px;
     }
+
+    /* 圖片排列改為雙欄 */
+    .image-row {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .image-row .image-item {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 200px;
+    }
+
+    /* 繪本頁面響應式調整 */
+    .book-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .book-image-container {
+        flex: 0 0 auto;
+        max-width: 100%;
+    }
+
+    .book-content ul {
+        margin-left: 30px;
+    }
 }
 
 /* ==========================================
    響應式設計 - 手機 (480px以下)
    ========================================== */
 @media (max-width: 480px) {
+    /* Header 調整 */
     .header-decoration {
-        height: 40px;
+        height: 60px;
     }
 
+    .header-logo {
+        height: 50px;
+    }
+
+    /* 導航欄調整 */
     .nav-brand {
         font-size: 1.2rem;
     }
 
+    /* 標題調整 */
     .section-title h2 {
         font-size: 1.3rem;
     }
 
+    /* 內容區域調整 */
     .section-content {
         font-size: 0.95rem;
+        padding: 20px 15px;
+        min-height: 200px;
     }
 
+    /* 圖片區塊調整 */
+    .image-section {
+        height: auto;
+        min-height: 200px;
+        padding: 20px 0;
+    }
+
+    /* Footer 響應式調整 */
     .footer-decoration {
         padding: 20px 0;
+    }
+
+    .footer-decoration .container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .footer-logo {
+        height: 60px;
+        grid-column: 1;
+        margin: 0 auto;
+    }
+
+    .footer-text-left {
+        grid-column: 1;
+        order: 2;
+        font-size: 0.9rem;
+    }
+
+    .footer-text-right {
+        grid-column: 1;
+        order: 3;
+        font-size: 0.9rem;
+    }
+
+    /* 圖片排列改為單欄 */
+    .image-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* YouTube 影片容器調整 */
+    .video-container {
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    /* 教具按鈕調整 */
+    .tool-button {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+
+    /* 繪本頁面響應式調整 */
+    .book-content ul {
+        margin-left: 20px;
     }
 }
 
@@ -621,4 +769,108 @@ html {
 
 .mb-20 {
     margin-bottom: 20px;
+}
+
+/* ==========================================
+   繪本介紹頁面布局
+   ========================================== */
+.book-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.book-image-container {
+    flex: 0 0 400px;
+}
+
+.book-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-content {
+    flex: 1;
+}
+
+.book-content ul {
+    margin-left: 40px;
+}
+
+/* ==========================================
+   情境卡牌疊放效果
+   ========================================== */
+.cards-stack-container {
+    position: relative;
+    width: 100%;
+    max-width: 635px;
+    height: 450px;
+    margin: 30px auto;
+}
+
+.card-image-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 55%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-image-2 {
+    position: absolute;
+    left: 45%;
+    top: 31%;
+    width: 55%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+/* 響應式調整 - 平板 */
+@media (max-width: 768px) {
+    .cards-stack-container {
+        height: auto;
+        min-height: 300px;
+    }
+
+    .card-image-1,
+    .card-image-2 {
+        width: 60%;
+    }
+
+    .card-image-2 {
+        left: 40%;
+        top: 25%;
+    }
+}
+
+/* 響應式調整 - 手機 */
+@media (max-width: 480px) {
+    .cards-stack-container {
+        height: auto;
+        min-height: 250px;
+        margin: 20px auto;
+    }
+
+    .card-image-1 {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .card-image-2 {
+        position: static;
+        left: auto;
+        top: auto;
+        width: 100%;
+        max-width: 100%;
+    }
 }

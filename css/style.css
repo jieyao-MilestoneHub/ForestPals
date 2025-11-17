@@ -587,12 +587,22 @@ main {
     /* 下拉選單項目增加間距，便於觸控 */
     .dropdown-menu a {
         padding: 15px 20px;
+        padding-left: 35px;
         font-size: 1rem;
+        color: #333;
     }
 
     .dropdown-submenu-list a {
         padding: 15px 20px;
-        font-size: 1rem;
+        padding-left: 50px;
+        font-size: 0.95rem;
+        color: #333;
+    }
+
+    /* 三層選單 */
+    .dropdown-submenu-list .dropdown-submenu-list a {
+        padding-left: 65px;
+        font-size: 0.9rem;
     }
 
     /* 下拉選單調整為展開式 */
@@ -601,10 +611,29 @@ main {
         box-shadow: none;
         background-color: #f9f9f9;
         display: none;
+        width: 100%;
     }
 
     .dropdown.active .dropdown-menu {
         display: block;
+    }
+
+    /* 二級選單也調整為展開式 */
+    .dropdown-submenu-list {
+        position: static !important;
+        box-shadow: none !important;
+        background-color: #efefef !important;
+        margin-left: 0 !important;
+    }
+
+    .dropdown-submenu.active > .dropdown-submenu-list {
+        display: block !important;
+    }
+
+    /* 下拉選單箭頭調整 */
+    .dropdown-submenu > a::after {
+        content: ' ▼';
+        float: right;
     }
 
     /* Section title 字體調整 */
@@ -657,6 +686,16 @@ main {
 
     .book-content ul {
         margin-left: 30px;
+    }
+
+    /* 關於我們頁面 - 平板版調整 */
+    #team .section-content > div[style*="display: flex"] {
+        gap: 30px !important;
+        margin-left: 0 !important;
+    }
+
+    #team .section-content > div[style*="display: flex"] > div {
+        margin-left: 0 !important;
     }
 }
 
@@ -746,6 +785,27 @@ main {
     /* 繪本頁面響應式調整 */
     .book-content ul {
         margin-left: 20px;
+    }
+
+    /* 關於我們頁面 - 團隊介紹區塊手機版調整 */
+    #team .section-content > div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        margin-left: 0 !important;
+        align-items: center !important;
+    }
+
+    #team .section-content > div[style*="display: flex"] > div {
+        width: 100% !important;
+        max-width: 300px !important;
+        margin-left: 0 !important;
+        text-align: center !important;
+    }
+
+    /* 關於我們頁面 - 學系標題手機版調整 */
+    #team h2[style*="text-align: center"] {
+        font-size: 1.4rem !important;
+        margin-bottom: 20px !important;
     }
 }
 

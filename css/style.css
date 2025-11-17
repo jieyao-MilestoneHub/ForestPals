@@ -634,10 +634,16 @@ main {
         border-radius: 0;
         margin-left: 0 !important;
         margin-top: 0;
-        display: none;
+        display: none !important;
         overflow: visible;
     }
 
+    /* 禁用手機版的 hover 效果 */
+    .dropdown-submenu:hover > .dropdown-submenu-list {
+        display: none !important;
+    }
+
+    /* 只有加上 active class 才顯示 */
     .dropdown-submenu.active > .dropdown-submenu-list {
         display: block !important;
     }

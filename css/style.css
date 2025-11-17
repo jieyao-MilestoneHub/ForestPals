@@ -548,6 +548,26 @@ main {
    響應式設計 - 平板 (768px以下)
    ========================================== */
 @media (max-width: 768px) {
+    /* 強制所有導航文字為黑色 - 最高優先級 */
+    .navbar,
+    .navbar *,
+    .nav-menu,
+    .nav-menu *,
+    .nav-item,
+    .nav-item *,
+    .nav-link,
+    .nav-link *,
+    .dropdown,
+    .dropdown *,
+    .dropdown-menu,
+    .dropdown-menu *,
+    .dropdown-submenu,
+    .dropdown-submenu *,
+    .dropdown-submenu-list,
+    .dropdown-submenu-list * {
+        color: #000 !important;
+    }
+
     /* 導航欄調整 */
     .nav-toggle {
         display: flex;

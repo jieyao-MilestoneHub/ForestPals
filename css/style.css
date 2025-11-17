@@ -602,13 +602,12 @@ main {
     .nav-link {
         padding: 15px 20px;
         border-radius: 0;
-        background-color: #fff8cc;
+        background-color: transparent;
         color: #000 !important;
     }
 
     .nav-link:hover,
     .nav-link:active,
-    .nav-link:visited,
     .nav-link:focus {
         background-color: #ffe16a;
         color: #000 !important;
@@ -681,7 +680,7 @@ main {
         display: block;
     }
 
-    /* 確保下拉選單內所有文字都是黑色粗體 */
+    /* 確保下拉選單內所有文字都是黑色粗體且可見 */
     .dropdown-menu,
     .dropdown-menu li,
     .dropdown-menu li a,
@@ -691,6 +690,15 @@ main {
         font-weight: bold !important;
         opacity: 1 !important;
         visibility: visible !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        display: block !important;
+    }
+
+    .dropdown-menu li a {
+        min-height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     /* 二級選單也調整為展開式 */
@@ -701,7 +709,7 @@ main {
         margin-left: 0 !important;
     }
 
-    /* 確保二級選單內所有文字都是黑色粗體 */
+    /* 確保二級選單內所有文字都是黑色粗體且可見 */
     .dropdown-submenu-list,
     .dropdown-submenu-list li,
     .dropdown-submenu-list li a,
@@ -711,6 +719,15 @@ main {
         font-weight: bold !important;
         opacity: 1 !important;
         visibility: visible !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        display: block !important;
+    }
+
+    .dropdown-submenu-list li a {
+        min-height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     .dropdown-submenu.active > .dropdown-submenu-list {

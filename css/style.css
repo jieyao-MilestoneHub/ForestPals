@@ -587,44 +587,64 @@ main {
     }
 
     .nav-link:hover,
-    .nav-link:active {
+    .nav-link:active,
+    .nav-link:visited,
+    .nav-link:focus {
         background-color: #ffe16a;
         color: #000 !important;
     }
 
     /* 下拉選單項目增加間距，便於觸控 */
-    .dropdown-menu a {
+    .dropdown-menu a,
+    .dropdown-menu a:link,
+    .dropdown-menu a:visited {
         padding: 15px 20px;
         padding-left: 35px;
         font-size: 1rem;
         color: #000 !important;
         background-color: transparent;
+        text-decoration: none !important;
     }
 
     .dropdown-menu a:hover,
-    .dropdown-menu a:active {
+    .dropdown-menu a:active,
+    .dropdown-menu a:focus {
         background-color: #ffe16a;
         color: #000 !important;
     }
 
-    .dropdown-submenu-list a {
+    .dropdown-submenu-list a,
+    .dropdown-submenu-list a:link,
+    .dropdown-submenu-list a:visited {
         padding: 15px 20px;
         padding-left: 50px;
         font-size: 0.95rem;
         color: #000 !important;
         background-color: transparent;
+        text-decoration: none !important;
     }
 
     .dropdown-submenu-list a:hover,
-    .dropdown-submenu-list a:active {
+    .dropdown-submenu-list a:active,
+    .dropdown-submenu-list a:focus {
         background-color: #ffd54f;
         color: #000 !important;
     }
 
     /* 三層選單 */
-    .dropdown-submenu-list .dropdown-submenu-list a {
+    .dropdown-submenu-list .dropdown-submenu-list a,
+    .dropdown-submenu-list .dropdown-submenu-list a:link,
+    .dropdown-submenu-list .dropdown-submenu-list a:visited {
         padding-left: 65px;
         font-size: 0.9rem;
+        color: #000 !important;
+    }
+
+    /* 確保選單項目中的所有文字都是黑色 */
+    .nav-menu a,
+    .nav-menu a *,
+    .dropdown-menu *,
+    .dropdown-submenu-list * {
         color: #000 !important;
     }
 

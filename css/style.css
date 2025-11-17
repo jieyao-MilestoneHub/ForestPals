@@ -588,11 +588,15 @@ main {
     .dropdown-menu a {
         padding: 15px 20px;
         font-size: 1rem;
+        color: #000;
+        display: block;
     }
 
     .dropdown-submenu-list a {
         padding: 15px 20px;
         font-size: 1rem;
+        color: #000;
+        display: block;
     }
 
     /* 下拉選單調整為展開式 */
@@ -601,6 +605,10 @@ main {
         box-shadow: none;
         background-color: #f9f9f9;
         display: none;
+    }
+
+    .dropdown-menu li {
+        background-color: #fff;
     }
 
     .dropdown.active .dropdown-menu {

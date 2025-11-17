@@ -548,26 +548,6 @@ main {
    響應式設計 - 平板 (768px以下)
    ========================================== */
 @media (max-width: 768px) {
-    /* 強制所有導航文字為黑色 - 最高優先級 */
-    .navbar,
-    .navbar *,
-    .nav-menu,
-    .nav-menu *,
-    .nav-item,
-    .nav-item *,
-    .nav-link,
-    .nav-link *,
-    .dropdown,
-    .dropdown *,
-    .dropdown-menu,
-    .dropdown-menu *,
-    .dropdown-submenu,
-    .dropdown-submenu *,
-    .dropdown-submenu-list,
-    .dropdown-submenu-list * {
-        color: #000 !important;
-    }
-
     /* 導航欄調整 */
     .nav-toggle {
         display: flex;
@@ -602,142 +582,29 @@ main {
     .nav-link {
         padding: 15px 20px;
         border-radius: 0;
-        background-color: transparent;
-        color: #000 !important;
-    }
-
-    .nav-link:hover,
-    .nav-link:active,
-    .nav-link:focus {
-        background-color: #ffe16a;
-        color: #000 !important;
     }
 
     /* 下拉選單項目增加間距，便於觸控 */
-    .dropdown-menu a,
-    .dropdown-menu a:link,
-    .dropdown-menu a:visited {
+    .dropdown-menu a {
         padding: 15px 20px;
-        padding-left: 35px;
         font-size: 1rem;
-        color: #000 !important;
-        background-color: transparent;
-        text-decoration: none !important;
     }
 
-    .dropdown-menu a:hover,
-    .dropdown-menu a:active,
-    .dropdown-menu a:focus {
-        background-color: #ffe16a;
-        color: #000 !important;
-    }
-
-    .dropdown-submenu-list a,
-    .dropdown-submenu-list a:link,
-    .dropdown-submenu-list a:visited {
+    .dropdown-submenu-list a {
         padding: 15px 20px;
-        padding-left: 50px;
-        font-size: 0.95rem;
-        color: #000 !important;
-        background-color: transparent;
-        text-decoration: none !important;
-    }
-
-    .dropdown-submenu-list a:hover,
-    .dropdown-submenu-list a:active,
-    .dropdown-submenu-list a:focus {
-        background-color: #ffd54f;
-        color: #000 !important;
-    }
-
-    /* 三層選單 */
-    .dropdown-submenu-list .dropdown-submenu-list a,
-    .dropdown-submenu-list .dropdown-submenu-list a:link,
-    .dropdown-submenu-list .dropdown-submenu-list a:visited {
-        padding-left: 65px;
-        font-size: 0.9rem;
-        color: #000 !important;
-    }
-
-    /* 確保選單項目中的所有文字都是黑色 */
-    .nav-menu a,
-    .nav-menu a *,
-    .dropdown-menu *,
-    .dropdown-submenu-list * {
-        color: #000 !important;
+        font-size: 1rem;
     }
 
     /* 下拉選單調整為展開式 */
     .dropdown-menu {
         position: static;
         box-shadow: none;
-        background-color: #fff8cc !important;
+        background-color: #f9f9f9;
         display: none;
-        width: 100%;
     }
 
     .dropdown.active .dropdown-menu {
         display: block;
-    }
-
-    /* 確保下拉選單內所有文字都是黑色粗體且可見 */
-    .dropdown-menu,
-    .dropdown-menu li,
-    .dropdown-menu li a,
-    .dropdown-menu li a *,
-    .dropdown-menu * {
-        color: #000 !important;
-        font-weight: bold !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        font-size: 16px !important;
-        line-height: 1.5 !important;
-        display: block !important;
-    }
-
-    .dropdown-menu li a {
-        min-height: 48px !important;
-        display: flex !important;
-        align-items: center !important;
-    }
-
-    /* 二級選單也調整為展開式 */
-    .dropdown-submenu-list {
-        position: static !important;
-        box-shadow: none !important;
-        background-color: #ffe16a !important;
-        margin-left: 0 !important;
-    }
-
-    /* 確保二級選單內所有文字都是黑色粗體且可見 */
-    .dropdown-submenu-list,
-    .dropdown-submenu-list li,
-    .dropdown-submenu-list li a,
-    .dropdown-submenu-list li a *,
-    .dropdown-submenu-list * {
-        color: #000 !important;
-        font-weight: bold !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        font-size: 16px !important;
-        line-height: 1.5 !important;
-        display: block !important;
-    }
-
-    .dropdown-submenu-list li a {
-        min-height: 48px !important;
-        display: flex !important;
-        align-items: center !important;
-    }
-
-    .dropdown-submenu.active > .dropdown-submenu-list {
-        display: block !important;
-    }
-
-    /* 下拉選單箭頭調整 */
-    .dropdown-submenu > a::after {
-        content: ' ▼';
-        float: right;
     }
 
     /* Section title 字體調整 */
@@ -790,16 +657,6 @@ main {
 
     .book-content ul {
         margin-left: 30px;
-    }
-
-    /* 關於我們頁面 - 平板版調整 */
-    #team .section-content > div[style*="display: flex"] {
-        gap: 30px !important;
-        margin-left: 0 !important;
-    }
-
-    #team .section-content > div[style*="display: flex"] > div {
-        margin-left: 0 !important;
     }
 }
 
@@ -889,27 +746,6 @@ main {
     /* 繪本頁面響應式調整 */
     .book-content ul {
         margin-left: 20px;
-    }
-
-    /* 關於我們頁面 - 團隊介紹區塊手機版調整 */
-    #team .section-content > div[style*="display: flex"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-        margin-left: 0 !important;
-        align-items: center !important;
-    }
-
-    #team .section-content > div[style*="display: flex"] > div {
-        width: 100% !important;
-        max-width: 300px !important;
-        margin-left: 0 !important;
-        text-align: center !important;
-    }
-
-    /* 關於我們頁面 - 學系標題手機版調整 */
-    #team h2[style*="text-align: center"] {
-        font-size: 1.4rem !important;
-        margin-bottom: 20px !important;
     }
 }
 

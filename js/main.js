@@ -67,47 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ==========================================
-    // 手機版二級選單（dropdown-submenu）處理
-    // ==========================================
-    const dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
-
-    dropdownSubmenus.forEach(function(submenu) {
-        const submenuLink = submenu.querySelector('a');
-
-        if (submenuLink) {
-            submenuLink.addEventListener('click', function(e) {
-                // 在手機版時，點擊二級選單時展開/收合
-                if (isMobileDevice()) {
-                    // 檢查這個連結是否有子選單
-                    const hasSubmenuList = submenu.querySelector('.dropdown-submenu-list');
-
-                    if (hasSubmenuList) {
-                        // 如果有子選單，阻止默認跳轉，改為展開/收合
-                        if (!submenu.classList.contains('active')) {
-                            e.preventDefault();
-
-                            // 關閉同層級的其他子選單
-                            const parentMenu = submenu.closest('.dropdown-menu, .dropdown-submenu-list');
-                            if (parentMenu) {
-                                const siblings = parentMenu.querySelectorAll(':scope > .dropdown-submenu');
-                                siblings.forEach(function(sibling) {
-                                    if (sibling !== submenu) {
-                                        sibling.classList.remove('active');
-                                    }
-                                });
-                            }
-
-                            // 展開當前子選單
-                            submenu.classList.add('active');
-                        }
-                    }
-                    // 如果沒有子選單，允許正常跳轉
-                }
-            });
-        }
-    });
-
-    // ==========================================
     // 點擊頁面其他地方時關閉選單
     // ==========================================
     document.addEventListener('click', function(e) {
@@ -121,11 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // 同時關閉所有下拉選單
             dropdownItems.forEach(function(item) {
                 item.classList.remove('active');
-            });
-
-            // 關閉所有子選單
-            dropdownSubmenus.forEach(function(submenu) {
-                submenu.classList.remove('active');
             });
         }
     });
@@ -144,9 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             dropdownItems.forEach(function(item) {
                 item.classList.remove('active');
-            });
-            dropdownSubmenus.forEach(function(submenu) {
-                submenu.classList.remove('active');
             });
         }
     });

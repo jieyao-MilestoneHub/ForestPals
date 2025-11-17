@@ -602,8 +602,12 @@ main {
     /* 下拉選單調整為展開式 */
     .dropdown-menu {
         position: static;
+        transform: none;
+        left: auto;
         box-shadow: none;
         background-color: #f9f9f9;
+        min-width: 100%;
+        border-radius: 0;
         display: none;
     }
 
@@ -611,7 +615,7 @@ main {
         background-color: #fff;
     }
 
-    .dropdown.active .dropdown-menu {
+    .nav-item.dropdown.active .dropdown-menu {
         display: block;
     }
 

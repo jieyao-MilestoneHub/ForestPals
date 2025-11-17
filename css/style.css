@@ -672,7 +672,7 @@ main {
     .dropdown-menu {
         position: static;
         box-shadow: none;
-        background-color: #f9f9f9;
+        background-color: #fff8cc !important;
         display: none;
         width: 100%;
     }
@@ -681,12 +681,36 @@ main {
         display: block;
     }
 
+    /* 確保下拉選單內所有文字都是黑色粗體 */
+    .dropdown-menu,
+    .dropdown-menu li,
+    .dropdown-menu li a,
+    .dropdown-menu li a *,
+    .dropdown-menu * {
+        color: #000 !important;
+        font-weight: bold !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
     /* 二級選單也調整為展開式 */
     .dropdown-submenu-list {
         position: static !important;
         box-shadow: none !important;
-        background-color: #efefef !important;
+        background-color: #ffe16a !important;
         margin-left: 0 !important;
+    }
+
+    /* 確保二級選單內所有文字都是黑色粗體 */
+    .dropdown-submenu-list,
+    .dropdown-submenu-list li,
+    .dropdown-submenu-list li a,
+    .dropdown-submenu-list li a *,
+    .dropdown-submenu-list * {
+        color: #000 !important;
+        font-weight: bold !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
     .dropdown-submenu.active > .dropdown-submenu-list {

@@ -85,18 +85,23 @@ document.addEventListener('DOMContentLoaded', function() {
                         e.preventDefault();
                         e.stopPropagation();
 
-                        // 切換當前子選單的展開狀態
-                        submenu.classList.toggle('active');
+                        // 檢查當前選單是否已展開
+                        const isActive = submenu.classList.contains('active');
 
-                        // 關閉同級的其他子選單
-                        const parentList = submenu.parentElement;
-                        if (parentList) {
-                            const siblings = parentList.querySelectorAll(':scope > .dropdown-submenu');
-                            siblings.forEach(function(sibling) {
-                                if (sibling !== submenu) {
+                        if (isActive) {
+                            // 如果已展開，只收起它自己
+                            submenu.classList.remove('active');
+                        } else {
+                            // 如果未展開，先關閉同級的其他子選單，再展開自己
+                            const parentList = submenu.parentElement;
+                            if (parentList) {
+                                const siblings = parentList.querySelectorAll(':scope > .dropdown-submenu');
+                                siblings.forEach(function(sibling) {
                                     sibling.classList.remove('active');
-                                }
-                            });
+                                });
+                            }
+                            // 展開當前選單
+                            submenu.classList.add('active');
                         }
                     }
                     // 如果沒有子選單，則允許正常跳轉

@@ -667,12 +667,17 @@ main {
 
     /* 子選單箭頭調整 */
     .dropdown-submenu > a::after {
-        content: ' ▾';
+        content: ' ▾' !important;
         float: right;
+        margin-left: 5px;
+        font-size: 0.9em;
     }
 
     .dropdown-submenu.active > a::after {
-        content: ' ▴';
+        content: ' ▴' !important;
+        float: right;
+        margin-left: 5px;
+        font-size: 0.9em;
     }
 
     /* Section title 字體調整 */

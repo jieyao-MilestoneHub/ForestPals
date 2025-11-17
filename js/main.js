@@ -72,14 +72,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
 
     dropdownSubmenus.forEach(function(submenu) {
-        const link = submenu.querySelector('a');
+        // 只选择直接子元素的 a 标签，避免选到嵌套子选单中的 a
+        const link = submenu.querySelector(':scope > a');
 
         if (link) {
             link.addEventListener('click', function(e) {
                 // 在手機版時，點擊子選單項目時展開下一級選單
                 if (isMobileDevice()) {
-                    // 檢查是否有子選單
-                    const submenuList = submenu.querySelector('.dropdown-submenu-list');
+                    // 检查是否有直接子元素的子选单列表
+                    const submenuList = submenu.querySelector(':scope > .dropdown-submenu-list');
                     if (submenuList) {
                         // 如果有子選單，則阻止跳轉並展開/收起子選單
                         e.preventDefault();
@@ -91,13 +92,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (isActive) {
                             // 如果已展開，只收起它自己
                             submenu.classList.remove('active');
+                            // 同时递归收起所有子选单
+                            const nestedSubmenus = submenu.querySelectorAll('.dropdown-submenu');
+                            nestedSubmenus.forEach(function(nested) {
+                                nested.classList.remove('active');
+                            });
                         } else {
                             // 如果未展開，先關閉同級的其他子選單，再展開自己
                             const parentList = submenu.parentElement;
                             if (parentList) {
                                 const siblings = parentList.querySelectorAll(':scope > .dropdown-submenu');
                                 siblings.forEach(function(sibling) {
-                                    sibling.classList.remove('active');
+                                    if (sibling !== submenu) {
+                                        sibling.classList.remove('active');
+                                        // 同时递归收起兄弟选单的所有子选单
+                                        const nestedSubmenus = sibling.querySelectorAll('.dropdown-submenu');
+                                        nestedSubmenus.forEach(function(nested) {
+                                            nested.classList.remove('active');
+                                        });
+                                    }
                                 });
                             }
                             // 展開當前選單

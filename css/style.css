@@ -661,6 +661,17 @@ main {
     /* 三級子選單 */
     .dropdown-submenu-list .dropdown-submenu-list {
         background-color: #d8d8d8;
+        display: none !important;
+    }
+
+    /* 禁用三級子選單的 hover 效果 */
+    .dropdown-submenu-list .dropdown-submenu:hover > .dropdown-submenu-list {
+        display: none !important;
+    }
+
+    /* 只有加上 active class 才顯示三級選單 */
+    .dropdown-submenu-list .dropdown-submenu.active > .dropdown-submenu-list {
+        display: block !important;
     }
 
     .dropdown-submenu-list .dropdown-submenu-list li {

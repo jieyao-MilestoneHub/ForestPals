@@ -1010,3 +1010,14 @@ html {
         text-align: center;
     }
 }
+
+/* 聯絡我們區塊 */
+.contact-text {
+    text-align: center;
+    line-height: 1.8;
+}
+
+.phone-number {
+    white-space: nowrap;
+    font-weight: bold;
+}

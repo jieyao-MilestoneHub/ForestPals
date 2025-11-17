@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樂學板</title>
+    <link rel="icon" type="image/svg+xml" href="../images/character_favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header裝飾條 (土黃色) -->
+    <div class="header-decoration">
+        <div class="container">
+            <a href="../index.html">
+                <img src="../images/logo.png" alt="Logo" class="header-logo">
+            </a>
+        </div>
+    </div>
+
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- 手機版選單按鈕 -->
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- 導航選單 -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="intro.html" class="nav-link">介紹</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="intro.html#design">設計理念</a></li>
+                        <li><a href="intro.html#users">使用對象</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a href="materials.html" class="nav-link">教材教具</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="materials.html#books">系列繪本</a>
+                            <ul class="dropdown-submenu-list">
+                                <li><a href="book1.html#book-title">我是身體小主人</a></li>
+                                <li><a href="book2.html#book-title">我要上學趣</a></li>
+                                <li><a href="book3.html#book-title">我會交朋友</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="materials.html#tools">搭配教具</a>
+                            <ul class="dropdown-submenu-list">
+                                <li><a href="tool1.html#tool-title">指導手冊</a></li>
+                                <li><a href="tool2.html#tool-title">樂學板</a></li>
+                                <li class="dropdown-submenu">
+                                    <a href="tool3.html#tool-title">森林小學劇場</a>
+                                    <ul class="dropdown-submenu-list">
+                                        <li><a href="tool3.html#cards">情境卡牌</a></li>
+                                        <li><a href="tool3.html#puppets">角色手偶</a></li>
+                                        <li><a href="tool3.html#stage">舞台</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="resources.html" class="nav-link">電子資源</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="resources.html#ebook1">我是身體小主人</a></li>
+                        <li><a href="resources.html#ebook2">我要上學趣</a></li>
+                        <li><a href="resources.html#ebook3">我會交朋友</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="about.html" class="nav-link">關於我們</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#team">團隊介紹</a></li>
+                        <li><a href="about.html#contact">聯絡我們</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main>
+        <section class="content-section">
+            <div class="section-title" id="tool-title">
+                <h2>樂學板</h2>
+            </div>
+            <div class="container">
+                <div class="section-content">
+                    <!-- 第一張圖片 - 置中 -->
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <img src="../images/樂學板1.png" alt="樂學板" style="max-width: 50%; height: auto;">
+                    </div>
+
+                    <!-- 第二和第三張圖片 - 左右兩側 -->
+                    <div class="image-row">
+                        <div class="image-item" style="flex: 1.1; margin-left: -35px; margin-top: -50px;">
+                            <img src="../images/樂學板2.png" alt="樂學板" style="box-shadow: none;">
+                        </div>
+                        <div class="image-item" style="flex: 0.8; margin-top: 30px;">
+                            <img src="../images/樂學板3.png" alt="樂學板" style="box-shadow: none;">
+                        </div>
+                    </div>
+
+                    <p>除了書中故事與靜電貼操作練習，我們設計了實體練習板，除了將書的學習主題加深加廣以外，也提供給不同能力的孩子更基礎的練習，運用正增強加分機制，引導孩子在正向回饋中練習目標行為。同時考量學習多樣性，針對不同學習需求的孩子提供差異化練習方案，家長以及老師可根據學生需求選擇最適合的練習方式。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer裝飾條 -->
+    <footer class="footer-decoration">
+        <div class="container">
+            <p class="footer-text-left">中原大學特殊教育學系<br>第26屆畢業專題</p>
+            <img src="../images/logo.jpg" alt="Footer Logo" class="footer-logo">
+            <p class="footer-text-right">銜轉跳躍我閉著眼</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

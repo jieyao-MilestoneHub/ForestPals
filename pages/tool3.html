@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>森林小學劇場</title>
+    <link rel="icon" type="image/svg+xml" href="../images/character_favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Header裝飾條 (土黃色) -->
+    <div class="header-decoration">
+        <div class="container">
+            <a href="../index.html">
+                <img src="../images/logo.jpg" alt="Logo" class="header-logo">
+            </a>
+        </div>
+    </div>
+
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- 手機版選單按鈕 -->
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- 導航選單 -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="intro.html" class="nav-link">介紹</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="intro.html#design">設計理念</a></li>
+                        <li><a href="intro.html#users">使用對象</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a href="materials.html" class="nav-link">教材教具</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="materials.html#books">系列繪本</a>
+                            <ul class="dropdown-submenu-list">
+                                <li><a href="book1.html#book-title">我是身體小主人</a></li>
+                                <li><a href="book2.html#book-title">我要上學趣</a></li>
+                                <li><a href="book3.html#book-title">我會交朋友</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="materials.html#tools">搭配教具</a>
+                            <ul class="dropdown-submenu-list">
+                                <li><a href="tool1.html#tool-title">指導手冊</a></li>
+                                <li><a href="tool2.html#tool-title">樂學板</a></li>
+                                <li class="dropdown-submenu">
+                                    <a href="tool3.html#tool-title">森林小學劇場</a>
+                                    <ul class="dropdown-submenu-list">
+                                        <li><a href="tool3.html#cards">情境卡牌</a></li>
+                                        <li><a href="tool3.html#puppets">角色手偶</a></li>
+                                        <li><a href="tool3.html#stage">舞台</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="resources.html" class="nav-link">電子資源</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="resources.html#ebook1">我是身體小主人</a></li>
+                        <li><a href="resources.html#ebook2">我要上學趣</a></li>
+                        <li><a href="resources.html#ebook3">我會交朋友</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="about.html" class="nav-link">關於我們</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#team">團隊介紹</a></li>
+                        <li><a href="about.html#contact">聯絡我們</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main>
+        <section class="content-section">
+            <div class="section-title" id="tool-title">
+                <h2>森林小學劇場</h2>
+            </div>
+            <div class="container">
+                <div class="section-content">
+                    <!-- 按鈕選單 -->
+                    <div class="tool-items-row">
+                        <button class="tool-button active" data-target="cards">情境卡牌</button>
+                        <button class="tool-button" data-target="puppets">角色手偶</button>
+                        <button class="tool-button" data-target="stage">舞台</button>
+                    </div>
+
+                    <!-- 內容區塊 -->
+                    <div class="tool-content-container">
+                        <!-- 情境卡牌內容 -->
+                        <div class="tool-content active" id="cards">
+                            <!-- 疊放圖片容器 -->
+                            <div class="cards-stack-container">
+                                <!-- 情境牌卡1 - 底層 -->
+                                <img src="../images/情境牌卡1.png" alt="情境牌卡1" class="card-image-1">
+                                <!-- 情境牌卡2 - 疊放在上層 -->
+                                <img src="../images/情境牌卡2.png" alt="情境牌卡2" class="card-image-2">
+                            </div>
+
+                            <!-- 說明文字 -->
+                            <p>卡牌統整全系列繪本的故事情節，共設計23種情境。家長和老師可以帶著孩子使用此卡牌練習，當抽到「正確情境」時，需根據卡牌內容取得對應角色手偶，並演練該卡牌情境；當抽到「錯誤情境」時，則需思考在該情境中可以採取哪些更合宜的行為。</p>
+                        </div>
+
+                        <!-- 角色手偶內容 -->
+                        <div class="tool-content" id="puppets">
+                            <div class="text-center">
+                                <img src="../images/角色手偶.png" alt="角色手偶" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); clip-path: inset(0% 2% 0% 2%); display: block; margin: 0 auto;">
+                            </div>
+                            <p>我們利用不織布製作角色手偶，搭配情境卡牌及森林小學劇場，家長和老師可帶領小朋友把情境搬上舞台，把角色帶入後，不僅能增進孩子的語言表達能力與創意思考。</p>
+                        </div>
+
+                        <!-- 舞台內容 -->
+                        <div class="tool-content" id="stage">
+                            <h3>舞台</h3>
+                            <p>這裡可以介紹「舞台」的內容、特色和使用方法。</p>
+                            <p>說明如何使用這個教具進行教學活動。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer裝飾條 -->
+    <footer class="footer-decoration">
+        <div class="container">
+            <p class="footer-text-left">中原大學特殊教育學系<br>第26屆畢業專題</p>
+            <img src="../images/logo.jpg" alt="Footer Logo" class="footer-logo">
+            <p class="footer-text-right">銜轉跳躍我閉著眼</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // 內容切換功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.tool-button');
+            const contents = document.querySelectorAll('.tool-content');
+
+            // 切換內容的函數
+            function switchContent(targetId, shouldScroll) {
+                // 移除所有按鈕的 active 狀態
+                buttons.forEach(function(btn) {
+                    btn.classList.remove('active');
+                });
+
+                // 移除所有內容的 active 狀態
+                contents.forEach(function(content) {
+                    content.classList.remove('active');
+                });
+
+                // 添加對應按鈕的 active 狀態
+                const targetButton = document.querySelector('.tool-button[data-target="' + targetId + '"]');
+                if (targetButton) {
+                    targetButton.classList.add('active');
+                }
+
+                // 顯示對應的內容
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+
+                // 滾動到標題位置，確保能看到完整內容
+                if (shouldScroll) {
+                    setTimeout(function() {
+                        const titleElement = document.getElementById('tool-title');
+                        if (titleElement) {
+                            titleElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 100);
+                }
+            }
+
+            // 監聽按鈕點擊
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault(); // 阻止默認行為
+                    // 如果點擊的是已經active的按鈕，不做任何操作
+                    if (this.classList.contains('active')) {
+                        return;
+                    }
+                    const targetId = this.getAttribute('data-target');
+                    switchContent(targetId, false);
+                    // 更新 URL hash（但不滾動頁面）
+                    history.pushState(null, null, '#' + targetId);
+                    // 滾動到標題位置
+                    setTimeout(function() {
+                        const titleElement = document.getElementById('tool-title');
+                        if (titleElement) {
+                            titleElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 100);
+                });
+            });
+
+            // 檢查 URL 中是否有 hash，如果有則自動切換到對應內容
+            function checkHashAndSwitch() {
+                const hash = window.location.hash.substring(1); // 移除 # 符號
+                if (hash && (hash === 'cards' || hash === 'puppets' || hash === 'stage')) {
+                    switchContent(hash, true);
+                }
+            }
+
+            // 頁面載入時檢查 hash
+            checkHashAndSwitch();
+
+            // 監聽 hash 變化（瀏覽器前進後退時）
+            window.addEventListener('hashchange', function() {
+                checkHashAndSwitch();
+            });
+
+            // 監聽導航欄中的森林小學劇場子選單鏈接
+            const navLinks = document.querySelectorAll('a[href*="tool3.html#"]');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    const targetHash = href.split('#')[1];
+                    const currentHash = window.location.hash.substring(1);
+
+                    // 如果點擊的是當前已經顯示的內容，阻止默認行為
+                    if (targetHash === currentHash) {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

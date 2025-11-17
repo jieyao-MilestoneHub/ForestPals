@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>森林小學系列</title>
+    <link rel="icon" type="image/svg+xml" href="images/character_favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header裝飾條 (土黃色) -->
+    <div class="header-decoration">
+        <div class="container">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo" class="header-logo">
+            </a>
+        </div>
+    </div>
+
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- 手機版選單按鈕 -->
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- 導航選單 -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="pages/intro.html" class="nav-link">介紹</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/intro.html#design">設計理念</a></li>
+                        <li><a href="pages/intro.html#users">使用對象</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="pages/materials.html" class="nav-link">教材教具</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="pages/materials.html#books">系列繪本</a>
+                            <ul class="dropdown-submenu-list">
+                                <li><a href="pages/book1.html#book-title">我是身體小主人</a></li>
+                                <li><a href="pages/book2.html#book-title">我要上學趣</a></li>
+                                <li><a href="pages/book3.html#book-title">我會交朋友</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="pages/materials.html#tools">搭配教具</a>
+                            <ul class="dropdown-submenu-list">
+                                <li><a href="pages/tool1.html#tool-title">指導手冊</a></li>
+                                <li><a href="pages/tool2.html#tool-title">樂學板</a></li>
+                                <li class="dropdown-submenu">
+                                    <a href="pages/tool3.html#tool-title">森林小學劇場</a>
+                                    <ul class="dropdown-submenu-list">
+                                        <li><a href="pages/tool3.html#cards">情境卡牌</a></li>
+                                        <li><a href="pages/tool3.html#puppets">角色手偶</a></li>
+                                        <li><a href="pages/tool3.html#stage">舞台</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="pages/resources.html" class="nav-link">電子資源</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/resources.html#ebook1">我是身體小主人</a></li>
+                        <li><a href="pages/resources.html#ebook2">我要上學趣</a></li>
+                        <li><a href="pages/resources.html#ebook3">我會交朋友</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="pages/about.html" class="nav-link">關於我們</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/about.html#team">團隊介紹</a></li>
+                        <li><a href="pages/about.html#contact">聯絡我們</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要內容 -->
+    <main>
+        <!-- 網站介紹區塊 -->
+        <section class="content-section">
+            <!-- 圖片區塊 -->
+            <div class="image-section">
+                <img src="images/封面照.png" alt="網站封面照片">
+            </div>
+
+            <div class="section-title">
+                <h2>網站介紹</h2>
+            </div>
+            <div class="container">
+                <div class="section-content">
+                    <p>為了讓幼小轉銜互動式繪本套組能讓更多人看到並使用這些資源。此網頁將繪本套組整合起來。</p>
+                    <p>此網站分為四個主要區塊：「介紹」、「教材教具」、「電子資源」以及「關於我們」。</p>
+                    <p>在「介紹」中，我們說明設計理念與使用對象；「教材教具」展示了系列繪本、搭配教具；「電子資源」則提供我們錄製的電子書；最後的「關於我們」讓大家更了解製作團隊的成員與聯繫方式。</p>
+                    <p>我們也放上以下的介紹影片以呈現整體概念，讓家長與老師能更直觀地了解教材特色。整個網站的目標，是希望能讓這套教材不只停留在實體操作上，而能透過網路傳遞給更多有需要的孩子、家長與教師，達到推廣與分享的效果。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 介紹影片區塊 -->
+        <section class="content-section">
+            <div class="section-title">
+                <h2>介紹影片</h2>
+            </div>
+            <div class="container">
+                <div class="video-container">
+                    <!-- YouTube影片嵌入 -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5jN_w3lDvGE?si=R_fw_LxaaBqjI55R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer裝飾條 -->
+    <footer class="footer-decoration">
+        <div class="container">
+            <p class="footer-text-left">中原大學特殊教育學系<br>第26屆畢業專題</p>
+            <img src="images/logo.png" alt="Footer Logo" class="footer-logo">
+            <p class="footer-text-right">銜轉跳躍我閉著眼</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

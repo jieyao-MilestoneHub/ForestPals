@@ -9,34 +9,22 @@ on:
   # 允許手動觸發
   workflow_dispatch:
 
-# 設定 GITHUB_TOKEN 的權限
+# 設定權限
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# 只允許一個部署同時進行
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  # 構建並部署
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # 上傳整個 repository
-          path: '.'
-
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          # 排除不需要的檔案
+          exclude_assets: '.github,.git'

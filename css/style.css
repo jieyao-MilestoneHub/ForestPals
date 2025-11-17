@@ -582,6 +582,14 @@ main {
     .nav-link {
         padding: 15px 20px;
         border-radius: 0;
+        background-color: #fff8cc;
+        color: #000 !important;
+    }
+
+    .nav-link:hover,
+    .nav-link:active {
+        background-color: #ffe16a;
+        color: #000 !important;
     }
 
     /* 下拉選單項目增加間距，便於觸控 */
@@ -589,20 +597,35 @@ main {
         padding: 15px 20px;
         padding-left: 35px;
         font-size: 1rem;
-        color: #333;
+        color: #000 !important;
+        background-color: transparent;
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a:active {
+        background-color: #ffe16a;
+        color: #000 !important;
     }
 
     .dropdown-submenu-list a {
         padding: 15px 20px;
         padding-left: 50px;
         font-size: 0.95rem;
-        color: #333;
+        color: #000 !important;
+        background-color: transparent;
+    }
+
+    .dropdown-submenu-list a:hover,
+    .dropdown-submenu-list a:active {
+        background-color: #ffd54f;
+        color: #000 !important;
     }
 
     /* 三層選單 */
     .dropdown-submenu-list .dropdown-submenu-list a {
         padding-left: 65px;
         font-size: 0.9rem;
+        color: #000 !important;
     }
 
     /* 下拉選單調整為展開式 */

@@ -89,8 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         // 檢查當前選單是否已展開
                         const isActive = submenu.classList.contains('active');
 
+                        // 調試信息
+                        console.log('點擊選單:', link.textContent.trim(), '是否已展開:', isActive);
+
                         if (isActive) {
                             // 如果已展開，只收起它自己
+                            console.log('收起選單:', link.textContent.trim());
                             submenu.classList.remove('active');
                             // 同时递归收起所有子选单
                             const nestedSubmenus = submenu.querySelectorAll('.dropdown-submenu');
@@ -98,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 nested.classList.remove('active');
                             });
                         } else {
+                            console.log('展開選單:', link.textContent.trim());
                             // 如果未展開，先關閉同級的其他子選單，再展開自己
                             const parentList = submenu.parentElement;
                             if (parentList) {

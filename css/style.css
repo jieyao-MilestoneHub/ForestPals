@@ -639,12 +639,16 @@ main {
     }
 
     /* 禁用手機版的 hover 效果 */
-    .dropdown-submenu:hover > .dropdown-submenu-list {
+    .dropdown-submenu:hover > .dropdown-submenu-list,
+    .dropdown-menu .dropdown-submenu:hover > .dropdown-submenu-list,
+    .dropdown-submenu-list .dropdown-submenu:hover > .dropdown-submenu-list {
         display: none !important;
     }
 
     /* 只有加上 active class 才顯示 */
-    .dropdown-submenu.active > .dropdown-submenu-list {
+    .dropdown-submenu.active > .dropdown-submenu-list,
+    .dropdown-menu .dropdown-submenu.active > .dropdown-submenu-list,
+    .dropdown-submenu-list .dropdown-submenu.active > .dropdown-submenu-list {
         display: block !important;
     }
 
@@ -662,16 +666,18 @@ main {
     .dropdown-submenu-list .dropdown-submenu-list {
         background-color: #d8d8d8;
         display: none !important;
-    }
-
-    /* 禁用三級子選單的 hover 效果 */
-    .dropdown-submenu-list .dropdown-submenu:hover > .dropdown-submenu-list {
-        display: none !important;
-    }
-
-    /* 只有加上 active class 才顯示三級選單 */
-    .dropdown-submenu-list .dropdown-submenu.active > .dropdown-submenu-list {
-        display: block !important;
+        position: static !important;
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        box-shadow: none;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        margin-left: 0 !important;
+        overflow: visible;
     }
 
     .dropdown-submenu-list .dropdown-submenu-list li {

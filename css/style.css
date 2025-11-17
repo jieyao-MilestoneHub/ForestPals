@@ -971,6 +971,25 @@ html {
     }
 }
 
+/* 團隊介紹區塊 - 手機版響應式調整 */
+@media (max-width: 768px) {
+    /* 針對團隊介紹的 flex 容器 */
+    #team + .container .section-content > div[style*="display: flex"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-left: 0 !important;
+        gap: 30px !important;
+    }
+
+    /* 針對小組成員和指導教授的子區塊 */
+    #team + .container .section-content > div[style*="display: flex"] > div {
+        margin-left: 0 !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+}
+
 /* 聯絡我們區塊 */
 .contact-text {
     text-align: center;

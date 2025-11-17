@@ -21,8 +21,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # 構建工作
-  build:
+  # 構建並部署
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,14 +37,6 @@ jobs:
           # 上傳整個 repository
           path: '.'
 
-  # 部署工作
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
